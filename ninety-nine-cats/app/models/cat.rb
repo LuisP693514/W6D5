@@ -31,8 +31,10 @@ include ActionView::Helpers::DateHelper
 
     def age
         bday = self.birth_date
-        # age = Time.now - (bday.year.years + bday.month.months + bday.day.days)
+        # age = Time.now - bday.year.years - bday.month.months - bday.day.days
+        # return time_ago_in_words(age)
         age = Date.today.year - bday.year
-        return "#{self.name} is #{age} years old."
+        return "#{age} yrs old."
+
     end
 end
